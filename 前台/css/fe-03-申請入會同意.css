@@ -1,0 +1,13 @@
+/* 申請入會同意頁 — 頁面獨有樣式（共用版型／元件見 fe-common.css） */
+.consent-text{font-size:var(--font-size-sm);line-height:1.9;color:var(--color-text)}
+.divider{border:none;border-top:1px solid var(--color-line);margin:26px 0 22px}
+.policy-link{font-size:var(--font-size-sm);color:var(--color-brand-dark);text-decoration:underline;display:inline-flex;align-items:center;gap:6px;margin-bottom:26px}
+.consent-box{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:12px}
+.chk-row{display:flex;align-items:center;gap:10px;font-size:var(--font-size-sm);color:var(--color-text);cursor:pointer;user-select:none}
+.chk-row input{width:20px;height:20px;accent-color:var(--color-brand-base);cursor:pointer}
+/* 手機版：垂直堆疊，避免連結／勾選框／按鈕擠壓 */
+@media (max-width:768px){
+  .page,.hero{width:100%}
+  .consent-box{flex-direction:column;align-items:flex-start}
+  .btn-primary{width:100%;text-align:center}
+}

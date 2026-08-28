@@ -1,0 +1,5 @@
+/* 員工名單維護頁 — 頁面獨有樣式（共用版型／元件／確認視窗見 fe-common.css） */
+.emp-tbl thead th{background:#EAE0C8;color:var(--color-brand-dark)}
+.emp-tbl tbody td{background:var(--color-brand-tint);color:var(--color-brand-dark);border-bottom:1px solid var(--color-line)}
+.emp-tbl tbody tr:nth-child(even){background:var(--color-brand-tint)}
+.emp-tbl tbody tr:last-child td{border-bottom:none}

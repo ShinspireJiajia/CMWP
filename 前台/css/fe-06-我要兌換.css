@@ -1,0 +1,10 @@
+/* 我要兌換頁 — 頁面獨有樣式（共用版型／元件／確認視窗見 fe-common.css） */
+.utabs{display:flex;border-bottom:1px solid rgba(43,33,24,.15);margin:var(--space-4) 0 32px}
+.utab{flex:1;text-align:center;padding:var(--space-3) 0;font-size:var(--font-size-base);color:var(--color-muted);font-weight:500;cursor:pointer;
+  margin-bottom:-1px;border-bottom:2px solid transparent;position:relative}
+.utab.is-current{color:var(--color-brand-base);font-weight:700;border-bottom-color:var(--color-brand-base)}
+.utab.is-current::after{content:"";position:absolute;left:50%;bottom:-10px;transform:translateX(-50%);
+  border:7px solid transparent;border-bottom-color:var(--color-brand-tint)}
+.usec{font-size:var(--font-size-base);font-weight:700;color:var(--color-brand-dark);margin:var(--space-5) 0 var(--space-3)}
+.ucards{display:flex;gap:20px;flex-wrap:wrap}
+.ph{color:var(--color-muted);font-size:var(--font-size-sm);padding:32px var(--space-1)}

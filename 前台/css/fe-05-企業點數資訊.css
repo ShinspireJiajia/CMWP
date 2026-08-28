@@ -1,0 +1,7 @@
+/* 企業點數資訊頁 — 頁面獨有樣式（共用版型／元件見 fe-common.css） */
+.pts-tbl thead th{background:#EAE0C8;color:var(--color-brand-dark)}
+.pts-tbl tbody td{background:var(--color-brand-tint);color:var(--color-brand-dark);border-bottom:1px solid var(--color-line)}
+.pts-tbl tbody tr:nth-child(even){background:var(--color-brand-tint)}
+.pts-tbl tbody tr:last-child td{border-bottom:none}
+.pts-tbl tbody td.muted{color:var(--color-brand-dark)}
+.pts-tbl .pill{background:transparent;padding:0;font-weight:700}

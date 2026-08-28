@@ -1,0 +1,29 @@
+/* 指派兌換者頁 — 頁面獨有樣式（共用版型／元件／確認視窗見 fe-common.css） */
+.asg-tbl thead th{background:#EAE0C8;color:var(--color-brand-dark)}
+.asg-tbl tbody td{background:var(--color-brand-tint);color:var(--color-brand-dark);border-bottom:1px solid var(--color-line)}
+.asg-tbl tbody tr:nth-child(even){background:var(--color-brand-tint)}
+.asg-tbl tbody tr:last-child td{border-bottom:none}
+.asg-tbl .pill{background:transparent;padding:0;font-weight:700}
+.asg-tbl tbody td:first-child .pill{color:var(--color-brand-dark)}
+.asg-tbl tbody tr.row-dim td{background:#EFEAE0;color:var(--color-muted)}
+.asg-tbl tbody tr.row-dim td:first-child .pill,.asg-tbl tbody tr.row-dim .pill{color:var(--color-muted)}
+/* 確認個人資料視窗 */
+.pd-card{width:640px;max-width:92vw;background:var(--color-bg);border-radius:16px;overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,.4)}
+.pd-head{height:56px;background:var(--color-ink-base);display:flex;align-items:center;padding:0 24px}
+.pd-head img{height:26px;display:block}
+.pd-body{padding:28px 32px 32px}
+.pd-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+.pd-top h3{font-size:var(--font-size-base);font-weight:700;color:var(--color-text)}
+.pd-x{cursor:pointer;color:var(--color-muted);font-size:18px;line-height:1}
+.pd-idx{font-size:var(--font-size-xs);color:var(--color-muted);margin-bottom:4px}
+.pd-name{font-size:var(--font-size-base);font-weight:700;color:var(--color-text);margin-bottom:16px}
+.pd-grid{display:flex;gap:24px;margin-bottom:16px}
+.pd-grid .f{flex:1}
+.pd-f-lbl{font-size:var(--font-size-xs);color:var(--color-muted);margin-bottom:4px}
+.pd-f-val{font-size:var(--font-size-sm);font-weight:600;color:var(--color-text)}
+.pd-divider{height:1px;background:var(--color-line);margin:20px 0}
+.pd-agree{display:flex;align-items:flex-start;gap:8px;font-size:var(--font-size-xs);color:var(--color-text);cursor:pointer}
+.pd-agree input{margin-top:2px}
+.pd-policy{margin:6px 0 0 24px}
+.pd-policy a{font-size:var(--font-size-xs);color:var(--color-brand-base);text-decoration:underline}
+.pd-actions{display:flex;justify-content:flex-end;margin-top:24px}

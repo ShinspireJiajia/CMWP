@@ -1,0 +1,11 @@
+/* 公司資料頁 — 頁面獨有樣式（共用版型／元件見 fe-common.css）
+   本頁欄位以「檢視／編輯」切換樣式呈現，.inp 樣式與共用表單輸入框不同，故於此覆寫 */
+.pad{padding:28px 32px}
+.inp{background:#EAE0C8;color:var(--color-brand-dark);text-align:center}
+.inp[readonly]{color:var(--color-brand-dark);cursor:default;background:#EAE0C8}
+.inp.is-editing{border-color:var(--color-brand-base);background:#fff;color:var(--color-brand-dark)}
+.frow{display:flex;align-items:center;gap:var(--space-5);margin-bottom:var(--space-4)}
+.frow:last-child{margin-bottom:0}
+.frow .lab{width:150px;flex-shrink:0;font-size:var(--font-size-sm);color:var(--color-brand-dark);font-weight:500}
+.frow .val{flex:1;max-width:600px}
+.card-head{display:flex;align-items:center;justify-content:flex-end;margin-bottom:var(--space-4)}

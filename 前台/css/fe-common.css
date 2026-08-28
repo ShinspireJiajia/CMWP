@@ -1,0 +1,168 @@
+/* 星宇企業會員入口（前台）— 共用元件庫
+   所有 FE 頁面共用的版型／元件樣式集中於此，頁面各自的 css（fe-NN-頁名.css）僅保留該頁獨有樣式。
+   載入順序固定為：tokens.css → fe-common.css → fe-NN-頁名.css（讓頁面樣式必要時可覆寫共用樣式）。
+   新增／調整共用元件請直接修改本檔，不要複製貼上到個別頁面 css，以免樣式漂移。 */
+*{margin:0;padding:0;box-sizing:border-box}
+a{text-decoration:none;color:inherit}
+html,body{font-family:var(--font-family-base);
+  color:var(--color-text);background:var(--color-bg);-webkit-font-smoothing:antialiased}
+
+/* 版面容器 */
+.page{width:1280px;min-height:684px;margin:0 auto;background:var(--color-bg);position:relative;overflow:hidden}
+
+/* 頂列 */
+.topbar{height:64px;background:var(--color-ink-base);display:flex;align-items:center;justify-content:space-between;
+  padding:0 32px}
+.brand{display:flex;align-items:center;gap:var(--space-3);color:#fff;letter-spacing:2px}
+.brand img{height:38px;display:block}
+.brand .sub{font-size:var(--font-size-xs);color:var(--color-ink-muted);letter-spacing:1px;border-left:1px solid var(--color-ink-line);padding-left:var(--space-3)}
+.topright{display:flex;align-items:center;gap:var(--space-4);color:var(--color-brand-light);font-size:var(--font-size-xs)}
+.topright .lang{display:flex;align-items:center;gap:var(--space-2)}
+.topright .logout{color:var(--color-brand-light);cursor:pointer}
+
+/* 子導覽 tabs */
+.tabs{height:52px;background:var(--color-ink-base);display:flex;align-items:stretch;padding:0 24px;border-bottom:1px solid var(--color-line);gap:var(--space-1)}
+.tab{display:flex;align-items:center;padding:0 20px;font-size:var(--font-size-sm);color:#fff;cursor:pointer;
+  border-bottom:3px solid transparent;font-weight:500}
+.tab.is-current{color:#fff;border-bottom-color:var(--color-ink-faint);font-weight:700}
+
+/* 內容骨架 */
+.main{padding:28px 32px}
+.h1{font-size:var(--font-size-lg);font-weight:700;color:var(--color-text);margin-bottom:var(--space-1)}
+.crumb{font-size:var(--font-size-xs);color:var(--color-muted);margin-bottom:var(--space-4)}
+.gold-line{width:46px;height:3px;background:var(--color-brand-base);border-radius:2px;margin:var(--space-3) 0 0}
+h3.sec{font-size:var(--font-size-base);color:var(--color-brand-dark);margin:var(--space-1) 0 var(--space-4);font-weight:700}
+.note{font-size:var(--font-size-xs);color:var(--color-muted);margin-top:var(--space-2)}
+.muted{color:var(--color-muted)}
+.flt{font-size:var(--font-size-xs);color:var(--color-muted)}
+
+/* 卡片 / 版面工具 */
+.card{background:#FFFFFF;border:1px solid var(--color-line);border-radius:var(--radius-md);box-shadow:var(--shadow-card)}
+.pad{padding:var(--space-5)}
+.row{display:flex;gap:20px}
+
+/* 按鈕 */
+.btn-primary{background:linear-gradient(180deg,var(--color-brand-light),var(--color-brand-base));color:#fff;border:none;
+  padding:var(--space-3) var(--space-5);border-radius:var(--radius-sm);font-size:var(--font-size-sm);font-weight:600;cursor:pointer;letter-spacing:1px;
+  box-shadow:0 2px 6px rgba(156,107,63,.35)}
+.btn-primary:disabled{opacity:.45;cursor:not-allowed;box-shadow:none}
+.btn-primary.is-disabled{background:#CBBFA8;color:#EFE9DC;box-shadow:none;cursor:not-allowed;pointer-events:none}
+.btn-ghost{background:#FFFFFF;color:var(--color-text);border:1px solid var(--color-line);padding:var(--space-3) var(--space-5);border-radius:var(--radius-sm);
+  font-size:var(--font-size-sm);cursor:pointer;display:inline-block}
+.btn-dark{background:var(--color-ink-base);color:#fff;border:none;padding:var(--space-3) var(--space-5);border-radius:var(--radius-sm);font-size:var(--font-size-sm);font-weight:600;cursor:pointer}
+
+/* 表單 */
+.lbl{font-size:var(--font-size-xs);color:var(--color-muted);margin-bottom:var(--space-2);display:block}
+.req::before{content:"＊";color:var(--color-state-error);margin-right:var(--space-1)}
+.inp{width:100%;height:44px;border:1px solid var(--color-line);border-radius:var(--radius-sm);padding:0 var(--space-4);font-size:var(--font-size-sm);font-family:inherit;background:#FFFFFF;color:var(--color-text)}
+.inp:focus{outline:none;border-color:var(--color-brand-base)}
+.inp:disabled{background:var(--color-brand-tint);color:var(--color-muted);cursor:not-allowed}
+select.inp{cursor:pointer}
+.field{margin-bottom:var(--space-4)}
+.hint{padding:var(--space-6);text-align:center;color:var(--color-muted);font-size:var(--font-size-sm)}
+
+/* 表格 */
+table{width:100%;border-collapse:collapse;font-size:var(--font-size-sm)}
+thead th{background:var(--color-ink-base);color:#fff;font-weight:600;text-align:left;padding:var(--space-3) var(--space-4);letter-spacing:.5px}
+tbody td{padding:var(--space-3) var(--space-4);border-bottom:1px solid var(--color-line);color:var(--color-text)}
+tbody tr:nth-child(even){background:#FFFFFF}
+
+/* 徽章 / 標籤 */
+.pill{display:inline-block;padding:var(--space-1) var(--space-3);border-radius:20px;font-size:var(--font-size-xs);font-weight:600}
+.pill.success{background:#E3EFE1;color:var(--color-state-success)}
+.pill.error{background:#F7E3E1;color:var(--color-state-error)}
+.pill.mut{background:#EFE7D6;color:var(--color-muted)}
+.pill.brand{background:var(--color-brand-tint);color:var(--color-brand-dark)}
+.tag{display:inline-block;background:var(--color-brand-tint);color:var(--color-brand-dark);font-size:var(--font-size-xs);padding:var(--space-1) var(--space-3);border-radius:6px;margin-left:var(--space-2)}
+
+/* 頁面層級錯誤訊息（API 呼叫失敗時顯示） */
+.page-err{display:flex;align-items:center;justify-content:space-between;gap:12px;background:#F7E3E1;border:1px solid #E7B9B7;color:var(--color-state-error);font-size:var(--font-size-sm);font-weight:600;border-radius:var(--radius-sm);padding:12px 16px;margin-bottom:16px}
+.page-err .x{cursor:pointer;font-weight:400;color:var(--color-state-error)}
+.field-err{font-size:var(--font-size-xs);color:var(--color-state-error);margin-top:6px}
+
+/* 登入 / OTP / 入會流程共用 hero */
+.hero{width:1280px;height:800px;margin:0 auto;position:relative;
+  background:radial-gradient(1200px 600px at 70% -10%,#FBF3E6 0,var(--color-bg) 55%,#EDE0C8 100%);
+  display:flex;align-items:center;justify-content:center;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;
+  background-image:radial-gradient(1.5px 1.5px at 20% 30%,#6b442316,transparent),radial-gradient(1.5px 1.5px at 80% 20%,#6b442312,transparent),radial-gradient(1px 1px at 60% 70%,#6b44230d,transparent),radial-gradient(1px 1px at 35% 80%,#6b44230d,transparent),radial-gradient(1.5px 1.5px at 90% 60%,#6b442312,transparent)}
+.hero-brand{position:absolute;top:48px;left:56px;color:var(--color-text);letter-spacing:3px}
+.hero-brand .mark{color:var(--color-brand-base)}
+.login-card{width:440px;background:rgba(255,253,247,.98);border-radius:18px;padding:44px 40px;
+  box-shadow:0 20px 50px rgba(120,68,37,.15);position:relative;z-index:2}
+.login-card .lg-mark{text-align:center;color:var(--color-brand-base);font-size:var(--font-size-base);letter-spacing:4px;margin-bottom:var(--space-2)}
+.login-card .lg-t{text-align:center;font-size:var(--font-size-lg);font-weight:700;color:var(--color-text);margin-bottom:28px;letter-spacing:2px}
+.foot{position:absolute;bottom:22px;width:100%;text-align:center;color:var(--color-muted);font-size:var(--font-size-xs);letter-spacing:.5px}
+
+/* KPI 卡片 */
+.kpi{display:flex;gap:var(--space-4)}
+.kpi .box{flex:1;background:var(--color-brand-tint);color:var(--color-text);border-radius:14px;padding:var(--space-5);position:relative;overflow:hidden;border:1px solid var(--color-line)}
+.kpi .box.alt{background:var(--color-brand-tint);color:var(--color-text);border:1px solid var(--color-line)}
+.kpi .lab{font-size:var(--font-size-xs);color:var(--color-brand-dark);margin-bottom:var(--space-2)}
+.kpi .box.alt .lab{color:var(--color-brand-dark)}
+.kpi .val{font-size:var(--font-size-xl);font-weight:800;letter-spacing:1px;color:var(--color-brand-dark)}
+.kpi .val .u{font-size:var(--font-size-sm);font-weight:500;margin-left:var(--space-1)}
+.kpi .box .deco{position:absolute;right:-10px;top:-10px;color:#97694C18;font-size:90px}
+
+/* 航班卡片（搜尋航班選擇清單／兌換完成航班資訊 共用） */
+.flt-list{display:flex;flex-direction:column;gap:var(--space-4)}
+.flt-card{border:1px solid var(--color-line);border-radius:var(--radius-md);background:#FFFFFF;box-shadow:var(--shadow-card);padding:var(--space-5);display:flex;flex-direction:column;gap:var(--space-4)}
+.fc-head{display:flex;justify-content:space-between;align-items:center}
+.fc-no{font-weight:700;color:var(--color-text);font-size:var(--font-size-base)}
+.fc-dur{font-size:var(--font-size-xs);color:var(--color-muted)}
+.fc-body{display:flex;align-items:center;gap:var(--space-4)}
+.fc-pt{flex:0 0 160px;display:flex;flex-direction:column;gap:2px}
+.fc-pt-end{align-items:flex-end;text-align:right}
+.fc-pt .fc-date{font-size:var(--font-size-xs);color:var(--color-muted)}
+.fc-pt .fc-time{font-size:var(--font-size-lg);font-weight:700;color:var(--color-brand-dark)}
+.fc-pt .fc-code{font-size:var(--font-size-sm);color:var(--color-text)}
+.fc-mid{flex:1;display:flex;align-items:center;justify-content:center;position:relative;height:2px;background:var(--color-line)}
+.fc-plane{position:absolute;background:#fff;color:var(--color-brand-base);padding:0 var(--space-2);font-size:var(--font-size-base)}
+.fc-foot{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--color-line);padding-top:var(--space-4)}
+
+/* 獎項 / 榮譽卡片（可兌換商品卡片，供酬賓機票／升等券／貴賓加值禮遇共用） */
+.award{flex:1;min-width:300px;max-width:420px;background:var(--color-brand-tint);border:1px solid var(--color-line);border-radius:12px;padding:20px var(--space-5)}
+.award .at{font-size:var(--font-size-base);color:var(--color-brand-dark);font-weight:600;margin-bottom:var(--space-3)}
+.award .pts{color:var(--color-brand-dark);font-weight:800;font-size:var(--font-size-lg)}
+.award .pts .u{font-size:var(--font-size-xs);color:var(--color-muted);font-weight:500;margin-left:3px}
+.ubtn{margin-top:var(--space-4);width:100%;padding:var(--space-2);display:block;text-align:center}
+
+/* 分段選單 */
+.seg{display:inline-flex;border:1px solid var(--color-line);border-radius:var(--radius-sm);overflow:hidden;margin-bottom:var(--space-4);background:#FFFFFF}
+.seg span{padding:var(--space-2) var(--space-4);font-size:var(--font-size-xs);color:var(--color-muted);cursor:pointer;border-right:1px solid var(--color-line);background:#FFFFFF}
+.seg span:last-child{border-right:none}
+.seg span.is-selected{background:var(--color-ink-base);color:#fff}
+
+/* 分頁（表格清單用，置於 .card 內表格下方，與表格共用同一張卡片） */
+.pagination{display:flex;align-items:center;gap:var(--space-2);padding:var(--space-4) var(--space-5);border-top:1px solid var(--color-line)}
+.pagination .pg-left{display:flex;align-items:center;gap:var(--space-3);margin-right:auto}
+.pagination .pg-info{color:var(--color-muted);font-size:var(--font-size-xs)}
+.pagination .pg-size{display:flex;align-items:center;gap:var(--space-2);color:var(--color-muted);font-size:var(--font-size-xs)}
+.pagination .pg-size-select{height:28px;padding:0 var(--space-2);border:1px solid var(--color-line);border-radius:var(--radius-sm);background:#FFFFFF;color:var(--color-text);font-size:var(--font-size-xs);font-family:inherit;cursor:pointer}
+.pagination .pg-btn{min-width:32px;height:32px;padding:0 var(--space-2);border:1px solid var(--color-line);border-radius:var(--radius-sm);background:#FFFFFF;color:var(--color-text);font-size:var(--font-size-xs);font-family:inherit;cursor:pointer}
+.pagination .pg-btn.nav{color:var(--color-brand-dark);font-weight:600}
+.pagination .pg-btn.is-current{background:var(--color-ink-base);border-color:var(--color-ink-base);color:#fff;font-weight:700;cursor:default}
+.pagination .pg-btn:disabled{opacity:.4;cursor:not-allowed}
+
+/* 確認 / 處理中 / 結果視窗（Modal） */
+.modal-mask{position:fixed;inset:0;background:rgba(8,16,24,.55);display:none;align-items:center;justify-content:center;z-index:50}
+.modal-mask.show{display:flex}
+.modal{width:560px;max-width:90vw;background:var(--color-brand-tint);border:1px solid var(--color-line);border-radius:16px;padding:var(--space-7) var(--space-6);box-shadow:0 30px 70px rgba(0,0,0,.4)}
+.modal .mtxt{text-align:center;font-size:var(--font-size-base);color:var(--color-text);margin-bottom:32px;line-height:1.8}
+.modal .mtxt b{color:var(--color-brand-base);font-weight:700;margin:0 var(--space-2)}
+.modal .mbtns{display:flex;gap:20px;justify-content:center}
+.modal .mbtn{min-width:150px;padding:var(--space-3) 0;border-radius:var(--radius-sm);font-size:var(--font-size-base);cursor:pointer;text-align:center;border:none}
+.modal .mbtn.ok{background:var(--color-brand-dark);color:#fff;font-weight:600}
+.modal .mbtn.cancel{background:#fff;color:var(--color-text);border:1px solid var(--color-line)}
+.modal .mtxt.proc{display:flex;align-items:center;justify-content:center;gap:var(--space-3);color:var(--color-brand-dark);margin-bottom:0}
+.modal .mtxt.err{color:var(--color-state-error);font-weight:600}
+.modal .mtxt.ok-icon{font-size:40px;color:var(--color-state-success);margin-bottom:var(--space-2)}
+.spinner{width:20px;height:20px;border:3px solid var(--color-line);border-top-color:var(--color-brand-base);border-radius:50%;animation:spin .8s linear infinite;flex:none}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* 頁尾（所有頁面共用） */
+.site-footer{background:var(--color-ink-light);padding:30px 60px;display:flex;align-items:center;justify-content:space-between;width:100%}
+.site-footer .brand-mark{height:30px;display:block;filter:brightness(0) saturate(0) invert(1);opacity:.8}
+.site-footer .badges{display:flex;align-items:center;gap:28px}
+.site-footer .skytrax{height:76px;width:auto;display:block}
+.site-footer .legal{font-size:11px;color:#C7B48F;line-height:1.9;text-align:right}
