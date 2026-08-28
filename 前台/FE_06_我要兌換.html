@@ -1,0 +1,22 @@
+﻿<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8">
+<title>我要兌換</title><link rel="stylesheet" href="../css/tokens.css"><link rel="stylesheet" href="css/fe-common.css"><link rel="stylesheet" href="css/fe-06-我要兌換.css"></head><body><div class="topbar"><a class="brand" href="FE_04_登入後首頁.html"><img src="assets/imgLogoStarlux.svg" style="height:38px;display:block" alt="STARLUX AIRLINES"><span class="sub">企業會員入口網站</span></a><div class="topright"><span class="lang">Taiwan / 繁體中文 ▾</span><a class="logout" href="FE_01_登入.html">登出</a></div></div><div class="tabs"><a class="tab " href="FE_10_公司資料.html">公司資料</a><a class="tab " href="FE_09_員工名單維護.html">員工名單維護</a><a class="tab " href="FE_05_企業點數資訊.html">企業點數資訊</a><a class="tab is-current" href="FE_06_我要兌換.html">我要兌換</a><a class="tab " href="FE_07_指派兌換者.html">指派兌換者</a></div><div class="page"><div class="main"><div class="h1">我要兌換</div><div class="gold-line"></div><div class="seg" style="margin-top:18px"><span class="is-selected">酬賓機票</span><span class="">升等券</span><span class="">貴賓加值禮遇</span></div>
+<div class="rdm-view" id="v-air"><div class="row" style="margin-top:6px"><div class="award"><div class="at">香港及澳門航點經濟艙</div><div class="pts">12,000<span class="u">點</span></div><button class="btn-primary redeem ubtn" data-mode="flight" data-name="香港及澳門航點經濟艙" data-pts="12,000" data-href="FE_08_搜尋航班.html">兌換</button></div><div class="award"><div class="at">亞洲不限航點經濟艙</div><div class="pts">28,000<span class="u">點</span></div><button class="btn-primary redeem ubtn" data-mode="flight" data-name="亞洲不限航點經濟艙" data-pts="28,000" data-href="FE_08_搜尋航班.html">兌換</button></div><div class="award"><div class="at">全球不限航點經濟艙</div><div class="pts">65,000<span class="u">點</span></div><button class="btn-primary redeem ubtn" data-mode="flight" data-name="全球不限航點經濟艙" data-pts="65,000" data-href="FE_08_搜尋航班.html">兌換</button></div></div></div>
+<div class="rdm-view" id="v-up" style="display:none">
+  <div class="utabs"><span class="utab is-current" data-up="u-asia">亞洲區間</span><span class="utab" data-up="u-amer">亞洲-美洲/歐洲區間</span></div>
+  <div class="up-panel" id="u-asia">
+    <div class="usec">兩艙等機型</div>
+    <div class="ucards"><div class="award"><div class="at">經濟艙 升等 商務艙</div><div class="pts">3,000 點數</div><button class="btn-primary redeem ubtn" data-mode="instant" data-name="亞洲區間 經濟艙 升等 商務艙" data-pts="3,000">兌換</button></div></div>
+    <div class="usec">四艙等機型</div>
+    <div class="ucards"><div class="award"><div class="at">經濟艙 升等 豪華經濟艙</div><div class="pts">1,500 點數</div><button class="btn-primary redeem ubtn" data-mode="instant" data-name="亞洲區間 經濟艙 升等 豪華經濟艙" data-pts="1,500">兌換</button></div><div class="award"><div class="at">豪華經濟艙 升等 商務艙</div><div class="pts">2,000 點數</div><button class="btn-primary redeem ubtn" data-mode="instant" data-name="亞洲區間 豪華經濟艙 升等 商務艙" data-pts="2,000">兌換</button></div></div>
+  </div>
+  <div class="up-panel" id="u-amer" style="display:none">
+    <div class="usec">四艙等機型</div>
+    <div class="ucards"><div class="award"><div class="at">經濟艙 升等 豪華經濟艙</div><div class="pts">4,000 點數</div><button class="btn-primary redeem ubtn" data-mode="instant" data-name="亞洲-美洲/歐洲區間 經濟艙 升等 豪華經濟艙" data-pts="4,000">兌換</button></div><div class="award"><div class="at">豪華經濟艙 升等 商務艙</div><div class="pts">5,000 點數</div><button class="btn-primary redeem ubtn" data-mode="instant" data-name="亞洲-美洲/歐洲區間 豪華經濟艙 升等 商務艙" data-pts="5,000">兌換</button></div></div>
+  </div>
+</div>
+<div class="rdm-view" id="v-lounge" style="display:none">
+  <div class="ucards" style="margin-top:6px"><div class="award"><div class="at">貴賓室／專屬報到櫃台／行李優先</div><div class="pts">800 點數</div><button class="btn-primary redeem ubtn" data-mode="instant" data-name="貴賓室／專屬報到櫃台／行李優先" data-pts="800">兌換</button></div></div>
+</div>
+<div class="modal-mask" id="redeemModal"><div class="modal"><div class="modal-body" id="modalBody"></div></div></div>
+<script src="js/fe-06-我要兌換.js"></script>
+</div></div><footer class="site-footer"><img class="brand-mark" src="assets/imgLogoStarlux.svg" alt="STARLUX"><div class="badges"><img class="skytrax" src="assets/imgStarFilled.png" alt="5 Star Airline Skytrax"><div class="legal"><div>&#169; Copyright 2026. STARLUX Airlines Co. Ltd. All rights reserved</div><div>星宇航空股份有限公司 統編：51712072</div><div>建議瀏覽器為 Google Chrome、Safari</div></div></div></footer></body></html>
