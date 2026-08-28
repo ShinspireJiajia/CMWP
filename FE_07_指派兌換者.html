@@ -1,0 +1,31 @@
+﻿<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8">
+<title>指派兌換者</title><link rel="stylesheet" href="../css/tokens.css"><link rel="stylesheet" href="css/fe-common.css"><link rel="stylesheet" href="css/fe-07-指派兌換者.css"></head><body><div class="topbar"><a class="brand" href="FE_04_登入後首頁.html"><img src="assets/imgLogoStarlux.svg" style="height:38px;display:block" alt="STARLUX AIRLINES"><span class="sub">企業會員入口網站</span></a><div class="topright"><span class="lang">Taiwan / 繁體中文 ▾</span><a class="logout" href="FE_01_登入.html">登出</a></div></div><div class="tabs"><a class="tab " href="FE_10_公司資料.html">公司資料</a><a class="tab " href="FE_09_員工名單維護.html">員工名單維護</a><a class="tab " href="FE_05_企業點數資訊.html">企業點數資訊</a><a class="tab " href="FE_06_我要兌換.html">我要兌換</a><a class="tab is-current" href="FE_07_指派兌換者.html">指派兌換者</a></div><div class="page"><div class="main"><div class="h1">指派兌換者</div><div class="gold-line"></div><div id="listView"><div class="card" style="margin-top:24px;overflow:hidden">
+<table class="asg-tbl"><thead><tr><th>類別 TYPE</th><th>說明 DESCRIPTION</th><th>到期日 EXPIRE</th><th>指派 SETTING</th><th>狀態 STATUS</th><th>歸還 CANCEL</th></tr></thead>
+<tbody id="asgBody"></tbody></table><div class="pagination" id="pagination"></div></div></div>
+<div id="assignView" style="display:none">
+<div class="card pad" style="margin-top:24px">
+<h3 class="sec" id="assignTitle">指派兌換者</h3>
+<div class="row" style="align-items:flex-end">
+<div style="flex:1"><label class="lbl">請選擇員工（會員號碼）</label><select class="inp" id="selEmployee"><option value="">請選擇</option></select></div>
+<div style="flex:1"><label class="lbl">無會員號碼請輸入PNR</label><input class="inp" id="inpPnr" placeholder="請輸入 PNR"></div>
+<button class="btn-primary" id="btnAssignSearch" style="height:44px">搜尋</button>
+</div>
+<div class="note" id="assignWarn" style="display:none;color:var(--color-state-error)">＊請選擇員工或輸入 PNR</div>
+<div class="note">＊員工名單資料取自「員工名單維護」頁面，可直接選取以減少手動輸入錯誤；如受指派人無會員號碼請改以 PNR 查詢</div>
+<div style="margin-top:20px"><button class="btn-ghost" id="btnAssignBack">返回</button></div>
+</div>
+</div>
+<div class="modal-mask" id="asgModal"><div class="modal"><div class="modal-body" id="asgModalBody"></div></div></div>
+<div class="modal-mask" id="pdModal"><div class="pd-card">
+<div class="pd-head"><img src="assets/imgLogoStarlux.svg" alt="STARLUX AIRLINES"></div>
+<div class="pd-body">
+<div class="pd-top"><h3>我已確認以下資料皆正確</h3><span class="pd-x" id="pdClose">✕</span></div>
+<div id="pdList"></div>
+<div class="pd-divider"></div>
+<label class="pd-agree"><input type="checkbox" id="pdAgree"><span>提供本人資訊，代表本人確認且接受星宇航空隱私保護政策</span></label>
+<div class="pd-policy"><a href="#" target="_blank" rel="noopener">星宇航空隱私保護政策 ↗</a></div>
+<div class="pd-actions"><button class="btn-primary" id="pdConfirm" disabled>確認</button></div>
+</div>
+</div></div>
+<script src="js/fe-common.js"></script><script src="js/fe-07-指派兌換者.js"></script>
+</div></div><footer class="site-footer"><img class="brand-mark" src="assets/imgLogoStarlux.svg" alt="STARLUX"><div class="badges"><img class="skytrax" src="assets/imgStarFilled.png" alt="5 Star Airline Skytrax"><div class="legal"><div>&#169; Copyright 2026. STARLUX Airlines Co. Ltd. All rights reserved</div><div>星宇航空股份有限公司 統編：51712072</div><div>建議瀏覽器為 Google Chrome、Safari</div></div></div></footer></body></html>

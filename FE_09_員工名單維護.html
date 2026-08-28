@@ -1,0 +1,12 @@
+﻿<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8">
+<title>員工名單維護</title><link rel="stylesheet" href="../css/tokens.css"><link rel="stylesheet" href="css/fe-common.css"><link rel="stylesheet" href="css/fe-09-員工名單維護.css"></head><body><div class="topbar"><a class="brand" href="FE_04_登入後首頁.html"><img src="assets/imgLogoStarlux.svg" style="height:38px;display:block" alt="STARLUX AIRLINES"><span class="sub">企業會員入口網站</span></a><div class="topright"><span class="lang">Taiwan / 繁體中文 ▾</span><a class="logout" href="FE_01_登入.html">登出</a></div></div><div class="tabs"><a class="tab " href="FE_10_公司資料.html">公司資料</a><a class="tab is-current" href="FE_09_員工名單維護.html">員工名單維護</a><a class="tab " href="FE_05_企業點數資訊.html">企業點數資訊</a><a class="tab " href="FE_06_我要兌換.html">我要兌換</a><a class="tab " href="FE_07_指派兌換者.html">指派兌換者</a></div><div class="page"><div class="main"><div class="h1">員工名單維護</div><div class="gold-line"></div><div class="card pad" style="margin-top:24px;margin-bottom:16px;background:var(--color-brand-tint);border-color:var(--color-line)">
+  <div style="display:flex;gap:12px;align-items:flex-end">
+    <div style="flex:1"><label class="lbl" style="color:var(--color-brand-dark)">新增員工（輸入 9 碼會員卡號）</label><input id="inpMemberNo" class="inp" style="background:#fffefc;color:var(--color-brand-dark);border-color:var(--color-line)" placeholder="例：900014368" maxlength="9" inputmode="numeric" autocomplete="off"><div id="addFieldErr" class="field-err" style="display:none"></div></div>
+    <button id="btnAdd" class="btn-primary" style="background:var(--color-brand-dark);box-shadow:none" disabled>新增</button>
+  </div>
+</div>
+<div id="pageErr" class="page-err" style="display:none"></div>
+<div class="card" style="overflow:hidden">
+<table class="emp-tbl"><thead><tr><th>Membership ID</th><th>姓名 NAME（遮罩）</th><th>操作</th></tr></thead><tbody id="empBody"></tbody></table><div class="pagination" id="pagination"></div></div></div></div>
+<div class="modal-mask" id="addModal"><div class="modal"><div class="modal-body" id="addModalBody"></div></div></div>
+<footer class="site-footer"><img class="brand-mark" src="assets/imgLogoStarlux.svg" alt="STARLUX"><div class="badges"><img class="skytrax" src="assets/imgStarFilled.png" alt="5 Star Airline Skytrax"><div class="legal"><div>&#169; Copyright 2026. STARLUX Airlines Co. Ltd. All rights reserved</div><div>星宇航空股份有限公司 統編：51712072</div><div>建議瀏覽器為 Google Chrome、Safari</div></div></div></footer><script src="js/fe-common.js"></script><script src="js/fe-09-員工名單維護.js"></script></body></html>

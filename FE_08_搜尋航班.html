@@ -1,0 +1,55 @@
+﻿<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8">
+<title>搜尋航班</title><link rel="stylesheet" href="../css/tokens.css"><link rel="stylesheet" href="css/fe-common.css"><link rel="stylesheet" href="css/fe-08-搜尋航班.css"></head><body><div class="topbar"><a class="brand" href="FE_04_登入後首頁.html"><img src="assets/imgLogoStarlux.svg" style="height:38px;display:block" alt="STARLUX AIRLINES"><span class="sub">企業會員入口網站</span></a><div class="topright"><span class="lang">Taiwan / 繁體中文 ▾</span><a class="logout" href="FE_01_登入.html">登出</a></div></div><div class="tabs"><a class="tab " href="FE_10_公司資料.html">公司資料</a><a class="tab " href="FE_09_員工名單維護.html">員工名單維護</a><a class="tab " href="FE_05_企業點數資訊.html">企業點數資訊</a><a class="tab is-current" href="FE_06_我要兌換.html">我要兌換</a><a class="tab " href="FE_07_指派兌換者.html">指派兌換者</a></div><div class="page"><div class="main"><div class="h1">搜尋去程航班<span class="pill brand" id="rdmItemTitle" style="display:none;margin-left:12px;vertical-align:middle"></span></div><div class="gold-line"></div>
+<div id="step1">
+<div class="card pad" style="margin-top:18px">
+  <div class="row">
+    <div style="flex:1"><label class="lbl">出發地</label><select class="inp" id="selOrigin">
+      <option value="TPE">台北 TPE</option>
+      <option value="RMQ">台中 RMQ</option>
+      <option value="HKG">香港 HKG</option>
+      <option value="MFM">澳門 MFM</option>
+    </select></div>
+    <div style="flex:1"><label class="lbl">目的地</label><select class="inp" id="selDest"></select></div>
+    <div style="flex:1"><label class="lbl">出發日期</label><input class="inp" type="date" id="depDate" value="2026-12-31"></div>
+    <div style="flex:1"><label class="lbl">回程日期</label><input class="inp" type="date" id="retDate" value="2027-01-07"></div>
+  </div>
+  <div class="row" style="margin-top:16px;align-items:flex-end;justify-content:space-between">
+    <div style="flex:0 0 220px"><label class="lbl">旅客 / 艙等</label><input class="inp" value="1 人 / 經濟艙" disabled></div>
+    <button class="btn-primary" id="btnSearch" style="height:44px">搜尋</button>
+  </div>
+  <div class="note" id="dateWarn" style="display:none;color:var(--color-state-error)">＊回程日期須晚於出發日期</div>
+  <div class="note">＊依兌換券種類（VOUCHER CODE）限制可選航點；本券限台北／台中 ⇄ 香港／澳門、來回、1 人經濟艙</div>
+</div>
+<div class="hint" id="searchHint">請選擇航班條件後按下「搜尋」</div>
+<div style="margin-top:18px;display:none" id="resultsCard">
+  <div class="dstrip">
+    <button type="button" class="dstrip-nav" id="btnPrevWeek">‹ 前七日</button>
+    <div class="dstrip-days" id="dstripDays"></div>
+    <button type="button" class="dstrip-nav" id="btnNextWeek">後七日 ›</button>
+  </div>
+  <div class="flt-list" id="fltList"></div>
+  <div class="hint" id="noFlightHint" style="display:none">該日期無航班，請選擇其他日期</div>
+</div>
+</div><div id="step2" style="display:none">
+<div class="card pad" style="margin-top:18px">
+  <h3 class="sec">已選擇航班</h3>
+  <div class="row" id="flightSummary" style="font-size:14px;color:var(--color-text)"></div>
+  <h3 class="sec" style="margin-top:24px">旅客資料 Passenger Information</h3>
+  <div class="row">
+    <div style="flex:1"><div class="field"><label class="lbl req">中文姓名</label><input class="inp" value="王小明"></div></div>
+    <div style="flex:1"><div class="field"><label class="lbl req">英文姓名（護照拼音）</label><input class="inp" value="WANG, HSIAO-MING"></div></div>
+  </div>
+  <div class="row">
+    <div style="flex:1"><div class="field"><label class="lbl req">護照號碼</label><input class="inp" value="312345678"></div></div>
+    <div style="flex:1"><div class="field"><label class="lbl req">出生日期</label><input class="inp" value="1990 / 05 / 20"></div></div>
+    <div style="flex:1"><div class="field"><label class="lbl req">手機號碼</label><input class="inp" value="0912-345-678"></div></div>
+  </div>
+  <div class="row"><div style="flex:1"><div class="field"><label class="lbl req">電子郵件</label><input class="inp" value="employee01@changhong.com.tw"></div></div></div>
+  <div style="display:flex;justify-content:flex-end;gap:12px;margin-top:10px">
+    <button class="btn-ghost" id="btnBack">上一步</button><button class="btn-primary" id="btnConfirmBooking">確認兌換</button>
+  </div>
+</div>
+</div>
+<div class="modal-mask" id="bookModal"><div class="modal"><div class="modal-body" id="bookModalBody"></div></div></div>
+<script src="js/fe-08-搜尋航班.js"></script>
+</div></div><footer class="site-footer"><img class="brand-mark" src="assets/imgLogoStarlux.svg" alt="STARLUX"><div class="badges"><img class="skytrax" src="assets/imgStarFilled.png" alt="5 Star Airline Skytrax"><div class="legal"><div>&#169; Copyright 2026. STARLUX Airlines Co. Ltd. All rights reserved</div><div>星宇航空股份有限公司 統編：51712072</div><div>建議瀏覽器為 Google Chrome、Safari</div></div></div></footer></body></html>
