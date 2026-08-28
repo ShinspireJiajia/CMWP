@@ -1,0 +1,7 @@
+/* 本頁獨有樣式：卡片內距、權限矩陣（分群標題／每列權限勾選） */
+.pad{padding:24px 28px}
+.perm-group{font-weight:700;color:var(--color-ink-base);padding:12px 12px;background:#F5EFE0;border-radius:6px;margin:18px 0 4px;font-size:14px}
+.perm-row{display:flex;align-items:center;padding:11px 14px;border-bottom:1px solid #EFE7D6}
+.perm-row .pname{width:220px;font-size:14px}
+.perm-row .pchecks{display:flex;gap:26px}
+.perm-row label{display:flex;align-items:center;gap:6px;font-size:13px;cursor:pointer}

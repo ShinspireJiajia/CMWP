@@ -1,0 +1,8 @@
+/* ===== 表格：可排序欄位 ===== */
+th.sortable{cursor:pointer;user-select:none}
+th.sortable .caret{margin-left:4px;font-size:10px;opacity:.55}
+th.sortable:hover .caret{opacity:1}
+
+/* ===== 新增／編輯 Modal：分段標題 ===== */
+.modal-sec{font-size:13px;font-weight:700;color:var(--color-brand-dark);margin:22px 0 14px;padding-top:18px;border-top:1px solid var(--color-line)}
+.modal-sec:first-child{margin-top:0;padding-top:0;border-top:none}

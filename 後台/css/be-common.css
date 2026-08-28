@@ -1,0 +1,124 @@
+/* ===== Reset ===== */
+*{margin:0;padding:0;box-sizing:border-box}
+a{text-decoration:none;color:inherit}
+html,body{font-family:"PingFang TC","Microsoft JhengHei","Heiti TC","Noto Sans TC",sans-serif;color:var(--color-text);
+  background:var(--color-bg);-webkit-font-smoothing:antialiased}
+
+/* ===== 版面骨架：側欄導覽 + 主區 ===== */
+.app{width:100%;min-height:100vh;display:flex;background:var(--color-bg)}
+.side{width:236px;background:var(--color-ink-base);color:var(--color-ink-muted);flex-shrink:0}
+.side .logo{height:64px;display:flex;align-items:center;gap:9px;padding:0 22px;color:#fff;
+  border-bottom:1px solid #ffffff15;letter-spacing:1px}
+.side .logo b{font-size:17px;letter-spacing:2px}
+.side .logo .t{font-size:11px;color:#9C8B6E;letter-spacing:1px}
+.nav{padding:14px 0}
+.nav .it{padding:13px 24px;font-size:14px;color:#BBA98A;cursor:pointer;display:flex;align-items:center;gap:10px;border-left:3px solid transparent}
+.nav .it:hover{background:#ffffff0a}
+.nav .it.is-current{background:#ffffff12;color:#fff;border-left-color:var(--color-brand-base);font-weight:600}
+.nav .sub{padding:8px 0 8px 0;background:#1E1A16}
+.nav .sub a{display:block;padding:9px 24px 9px 50px;font-size:13px;color:#B0A184;text-decoration:none}
+.nav .sub a.is-current{color:#fff;font-weight:600}
+.nav .sub a.is-current::before{content:"•";color:var(--color-brand-base);margin-right:8px}
+
+/* ===== 主區：頂列 / 標題 / 篩選列 ===== */
+.body{flex:1;min-width:0}
+.top{height:64px;background:#fff;border-bottom:1px solid var(--color-line);display:flex;align-items:center;
+  justify-content:space-between;padding:0 28px}
+.top .crumb{font-size:13px;color:var(--color-muted)}.top .crumb b{color:var(--color-text)}
+.top .usr{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--color-text)}
+.top .av{width:32px;height:32px;border-radius:50%;background:var(--color-brand-base);color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700}
+.logout{color:var(--color-muted);font-size:13px;margin-left:6px}
+.main{padding:26px 28px}
+.h1{font-size:21px;font-weight:700;color:var(--color-ink-base);margin-bottom:18px}
+.bar{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;gap:12px;flex-wrap:wrap}
+.filters{display:flex;gap:10px;align-items:flex-end;flex-wrap:wrap}
+.f label{font-size:12px;color:var(--color-muted);display:block;margin-bottom:5px}
+
+/* ===== 篩選列（統一樣式，以 BE_02_歷程查詢 為主）===== */
+.filters-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px 32px}
+.filters-grid .f label{font-size:12px;color:var(--color-muted);display:block;margin-bottom:6px}
+.filters-grid .inp{width:100%}
+.filters-grid .rangewrap{width:100%}
+.filters-grid .rangewrap .inp{flex:1;min-width:0}
+.filters-div{height:1px;background:var(--color-line);margin:20px 0}
+.filters-adv[hidden]{display:none}
+.filters-foot{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.adv-toggle{background:#fff;border:1px solid var(--color-line);border-radius:var(--radius-sm);height:40px;
+  padding:0 16px;font-size:13.5px;color:var(--color-text);cursor:pointer;display:inline-flex;align-items:center;gap:8px}
+.adv-toggle:hover{background:var(--color-brand-tint)}
+.adv-toggle .car{font-size:10px;color:var(--color-muted);transition:transform .15s ease}
+.adv-toggle.is-open .car{transform:rotate(180deg)}
+.filters-btns{display:flex;gap:10px}
+.rangewrap{display:flex;align-items:center;gap:6px}
+.rangewrap .sep{color:var(--color-muted);font-size:13px}
+
+/* ===== 表單 / 按鈕 ===== */
+.inp{height:40px;border:1px solid var(--color-line);border-radius:8px;padding:0 12px;font-size:13.5px;background:#fff;color:var(--color-text)}
+.inp.sm{width:130px}
+.btn-primary{background:var(--color-brand-base);color:#fff;border:none;height:40px;padding:0 22px;border-radius:var(--radius-sm);font-size:14px;cursor:pointer;font-weight:600}
+.btn-ghost{background:#fff;color:var(--color-text);border:1px solid var(--color-line);font-weight:500;height:40px;padding:0 22px;border-radius:var(--radius-sm);font-size:14px;cursor:pointer}
+.btn-sm{height:34px;padding:0 14px;font-size:13px}
+.req::before{content:"＊";color:var(--color-state-error);margin-right:2px}
+.fld{display:flex;align-items:center;gap:18px;margin-bottom:18px}
+.fld .lb{width:120px;font-size:14px;font-weight:600;text-align:right}
+
+/* ===== 卡片 / 表格 ===== */
+.card{background:#fff;border:1px solid var(--color-line);border-radius:var(--radius-md);box-shadow:var(--shadow-card);overflow:hidden}
+.pad{padding:22px}
+table{width:100%;border-collapse:collapse;font-size:13px}
+thead th{background:var(--color-ink-base);color:#fff;font-weight:600;text-align:left;padding:12px 15px;white-space:nowrap;letter-spacing:.3px}
+tbody td{padding:12px 15px;border-bottom:1px solid var(--color-line)}
+tbody tr:nth-child(even){background:var(--color-brand-tint)}
+
+/* ===== 徽章 / 輔助文字 ===== */
+.pill{display:inline-block;padding:3px 11px;border-radius:18px;font-size:12px;font-weight:600}
+.pill.success{background:#E3EFE1;color:var(--color-state-success)}.pill.error{background:#F7E3E1;color:var(--color-state-error)}
+.pill.brand{background:#F0E6D5;color:var(--color-brand-base)}.pill.mut{background:#EFE7D6;color:var(--color-muted)}.pill.accent{background:#F7EAD2;color:var(--color-brand-muted)}
+.mono{font-family:"SF Mono",Menlo,monospace;font-size:12.5px;color:#4A4038}
+.lnk{color:var(--color-brand-base);cursor:pointer;font-weight:600}
+.muted{color:var(--color-muted)}
+.tot{background:#F5EFE0;border:1px dashed var(--color-brand-base);border-radius:8px;padding:10px 16px;font-size:13px;color:var(--color-brand-dark);display:inline-block}
+
+/* ===== 分段選單 ===== */
+.seg{display:inline-flex;border:1px solid var(--color-line);border-radius:8px;overflow:hidden}
+.seg span{padding:8px 16px;font-size:13px;color:var(--color-muted);cursor:pointer;border-right:1px solid var(--color-line)}
+.seg span:last-child{border-right:none}.seg span.is-selected{background:var(--color-ink-base);color:#fff}
+
+/* ===== 分頁 ===== */
+.pager{display:flex;align-items:center;justify-content:space-between;margin-top:14px;flex-wrap:wrap;gap:12px}
+.pager-size{display:flex;align-items:center;gap:8px;font-size:13px}
+.pager-nav{display:flex;gap:6px}
+.pg-btn{display:inline-flex;align-items:center;justify-content:center;min-width:32px;height:32px;padding:0 4px;
+  border:1px solid var(--color-line);border-radius:6px;font-size:13px;color:var(--color-muted);background:#fff;cursor:pointer}
+.pg-btn.is-current{border-color:var(--color-ink-base);color:#fff;background:var(--color-ink-base);cursor:default}
+.pg-btn.is-disabled{opacity:.4;cursor:default}
+
+/* ===== 對話框（Modal） ===== */
+.modal-mask{position:fixed;inset:0;background:rgba(30,24,16,.5);display:none;align-items:center;justify-content:center;z-index:60;padding:20px}
+.modal-mask.show{display:flex}
+.modal{background:#fff;border-radius:var(--radius-md);box-shadow:0 30px 70px rgba(0,0,0,.35);max-width:92vw;max-height:88vh;display:flex;flex-direction:column}
+.modal-head{display:flex;align-items:center;justify-content:space-between;padding:16px 22px;border-bottom:1px solid var(--color-line);font-size:15px;font-weight:700;color:var(--color-ink-base)}
+.modal-close{cursor:pointer;color:var(--color-muted);font-size:16px;line-height:1;padding:2px}
+.modal-close:hover{color:var(--color-text)}
+.modal-body{padding:20px 22px;overflow-y:auto}
+.modal-foot{padding:14px 22px;border-top:1px solid var(--color-line);display:flex;justify-content:flex-end;gap:10px}
+
+/* ===== 登入頁（無側欄導覽） ===== */
+.hero{width:100%;min-height:100vh;display:flex;align-items:center;justify-content:center;
+  background:radial-gradient(1200px 600px at 70% -10%,#FBF3E6 0,var(--color-bg) 55%,#EDE0C8 100%)}
+.login-card{width:420px;background:#fffdfa;border:1px solid var(--color-line);border-radius:16px;padding:42px 40px;box-shadow:var(--shadow-card)}
+.login-card .lg-logo{text-align:center;margin-bottom:10px}
+.login-card .lg-logo img{height:36px;filter:brightness(0);opacity:.82}
+.login-card .lg-t{text-align:center;font-size:19px;font-weight:700;color:var(--color-text);letter-spacing:1px;margin-bottom:6px}
+.login-card .lg-sub{text-align:center;font-size:12px;color:var(--color-muted);margin-bottom:26px}
+.login-card .field{margin-bottom:15px}
+.login-card .field:last-of-type{margin-bottom:22px}
+.login-card .lbl{font-size:13px;color:var(--color-brand-dark);display:block;margin-bottom:6px}
+.login-card .inp{width:100%;height:44px}
+.login-card .btn-primary{display:block;text-align:center;width:100%;height:46px;line-height:46px;padding:0;background:var(--color-brand-dark)}
+.login-card .foot{text-align:center;font-size:11px;color:var(--color-muted);margin-top:20px}
+
+/* ===== 頁尾（簡化版：僅品牌標誌 + 版權文字） ===== */
+.site-footer{background:var(--color-ink-light);padding:18px 32px;display:flex;align-items:center;justify-content:space-between;width:100%}
+.site-footer .brand-mark{height:20px;display:block;filter:brightness(0) saturate(0) invert(1);opacity:.8}
+.site-footer .legal{font-size:11px;color:var(--color-ink-faint);line-height:1.6;text-align:right}

@@ -1,0 +1,4 @@
+/* 本頁獨有樣式：表格內距略寬，供模板內容預覽使用 */
+tbody td{padding:14px 15px;border-bottom:1px solid var(--color-line)}
+#tplModal .inp[readonly]{background:var(--color-bg);color:var(--color-muted);cursor:default}
+#tplModal textarea.inp{resize:vertical;font-family:inherit}

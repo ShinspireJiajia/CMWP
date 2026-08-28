@@ -1,0 +1,5 @@
+/* 檢視（唯讀）模式：隱藏儲存／新增／刪除等調整功能，鎖定所有輸入欄位 */
+#editView.is-readonly .inp:disabled{background:var(--color-bg);color:var(--color-muted);cursor:not-allowed}
+#editView.is-readonly #saveBtn,
+#editView.is-readonly #addRowBar,
+#editView.is-readonly .thr-act{display:none}
