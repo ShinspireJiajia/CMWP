@@ -1,0 +1,56 @@
+﻿<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><title>歷程查詢</title><link rel="stylesheet" href="../css/tokens.css"><link rel="stylesheet" href="css/be-common.css"><link rel="stylesheet" href="css/be-02-歷程查詢.css"></head><body><div class="app"><div class="side"><a class="logo" href="BE_02_歷程查詢.html"><img src="assets/imgLogoStarlux.svg" style="height:26px;display:block" alt="STARLUX"><div class="t" style="margin-left:8px">企業會員網站後台</div></a><div class="nav"><a class="it " href="BE_03_累計門檻維護.html">▸ 累計功能管理</a><a class="it " href="BE_05_企業資料維護.html">▸ 基本資料管理</a><a class="it " href="BE_06_公告管理.html">▸ 網頁內容管理</a><a class="it " href="BE_07_用戶清單.html">▸ 權限管理</a><a class="it is-current" href="BE_02_歷程查詢.html">▸ 歷程查詢</a></div></div><div class="body"><div class="top"><div class="crumb">後台首頁 ＞ <b>歷程查詢</b></div><div class="usr"><span>王志明（Admin）</span><div class="av">王</div><a href="BE_01_後台登入.html" class="logout">登出</a></div></div><div class="main"><div class="h1">歷程查詢</div>
+<div class="card pad" style="margin-bottom:18px"><div class="hist-filters">
+  <div class="filters-grid">
+    <div class="f"><label>關鍵字</label><input class="inp" placeholder="ALCP ID / PNR" value="JX0008422"></div>
+    <div class="f"><label>日期區間</label><div class="rangewrap"><input class="inp" value="2026/04/01"><span class="sep">～</span><input class="inp" value="2026/04/03"></div></div>
+    <div class="f"><label>狀態</label><select class="inp"><option>全部</option><option>成功</option><option>失敗</option></select></div>
+  </div>
+  <div class="filters-adv" id="filtersAdv" hidden>
+    <div class="filters-div"></div>
+    <div class="filters-grid">
+      <div class="f"><label>介接系統</label><select class="inp"><option>全部</option><option>ALMS</option><option>ARDW</option><option>JXMI</option></select></div>
+      <div class="f"><label>IP Address</label><input class="inp" placeholder="例：172.1.1.1"></div>
+      <div class="f"><label>時間 TIME</label><div class="rangewrap"><input class="inp" value="00:00:00"><span class="sep">～</span><input class="inp" value="23:59:59"></div></div>
+    </div>
+  </div>
+  <div class="filters-div"></div>
+  <div class="filters-foot">
+    <button class="adv-toggle" id="advToggle" type="button"><span class="txt">進階條件</span><span class="car">▼</span></button>
+    <div class="filters-btns"><button class="btn-ghost" id="btnReset">重置</button><button class="btn-primary">搜尋</button></div>
+  </div>
+</div></div>
+<div class="bar"><span class="muted">查詢結果（Log 保存期限 1 年）</span><button class="btn-ghost btn-sm">⬇ 匯出 XLSX / CSV</button></div>
+<div class="card"><table><thead><tr><th>介接系統</th><th>ALCP ID</th><th>PNR</th><th>IP Address</th><th class="sortable" data-sort="date">日期<span class="caret">↕</span></th><th class="sortable" data-sort="time">時間<span class="caret">↕</span></th><th>結果</th><th>Error Message</th><th style="width:96px;white-space:nowrap">操作</th></tr></thead><tbody>
+<tr><td class="mono">ALMS</td><td class="mono">JX0008422</td><td class="muted">—</td><td class="mono">172.1.1.1</td><td>2026/04/01</td><td class="mono">17:01:43</td><td><span class="pill success">成功</span></td><td class="muted">—</td><td><span class="lnk view-detail" data-id="1">查看明細</span></td></tr>
+<tr><td class="mono">ALMS</td><td class="mono">JX0008422</td><td class="muted">—</td><td class="mono">172.1.1.1</td><td>2026/04/01</td><td class="mono">17:05:25</td><td><span class="pill error">失敗</span></td><td class="muted"><span class="errmsg" title="Error Code 404：查無對應會員資料">Error Code 404：查無對應會員資料</span></td><td><span class="lnk view-detail" data-id="2">查看明細</span></td></tr>
+<tr><td class="mono">ARDW</td><td class="muted">—</td><td class="mono">6ABCD8</td><td class="mono">172.1.1.1</td><td>2026/04/01</td><td class="mono">17:06:56</td><td><span class="pill success">成功</span></td><td class="muted">—</td><td><span class="lnk view-detail" data-id="3">查看明細</span></td></tr>
+<tr><td class="mono">ARDW</td><td class="muted">—</td><td class="mono">6ABCD8</td><td class="mono">172.1.1.1</td><td>2026/04/01</td><td class="mono">17:10:01</td><td><span class="pill error">失敗</span></td><td class="muted"><span class="errmsg" title="Error Code 57721：訂位艙等不符兌換條件">Error Code 57721：訂位艙等不符兌換條件</span></td><td><span class="lnk view-detail" data-id="4">查看明細</span></td></tr>
+<tr><td class="mono">ALMS</td><td class="mono">JX0009103</td><td class="muted">—</td><td class="mono">172.1.1.8</td><td>2026/04/02</td><td class="mono">09:22:10</td><td><span class="pill success">成功</span></td><td class="muted">—</td><td><span class="lnk view-detail" data-id="5">查看明細</span></td></tr>
+<tr><td class="mono">JXMI</td><td class="muted">—</td><td class="muted">—</td><td class="mono">172.1.1.8</td><td>2026/04/02</td><td class="mono">09:24:55</td><td><span class="pill error">失敗</span></td><td class="muted"><span class="errmsg" title="OTP 驗證逾時，請重新登入">OTP 驗證逾時，請重新登入</span></td><td><span class="lnk view-detail" data-id="6">查看明細</span></td></tr>
+<tr><td class="mono">ARDW</td><td class="muted">—</td><td class="mono">7FQK21</td><td class="mono">172.1.1.15</td><td>2026/04/02</td><td class="mono">11:38:02</td><td><span class="pill success">成功</span></td><td class="muted">—</td><td><span class="lnk view-detail" data-id="7">查看明細</span></td></tr>
+<tr><td class="mono">ALMS</td><td class="mono">JX0010256</td><td class="muted">—</td><td class="mono">172.1.1.15</td><td>2026/04/02</td><td class="mono">14:52:47</td><td><span class="pill error">失敗</span></td><td class="muted"><span class="errmsg" title="Error Code 500：會員系統暫時無法連線，請稍後再試">Error Code 500：會員系統暫時無法連線，請稍後再試</span></td><td><span class="lnk view-detail" data-id="8">查看明細</span></td></tr>
+<tr><td class="mono">JXMI</td><td class="muted">—</td><td class="muted">—</td><td class="mono">172.1.1.20</td><td>2026/04/03</td><td class="mono">08:15:33</td><td><span class="pill success">成功</span></td><td class="muted">—</td><td><span class="lnk view-detail" data-id="9">查看明細</span></td></tr>
+<tr><td class="mono">ARDW</td><td class="muted">—</td><td class="mono">9KPX03</td><td class="mono">172.1.1.20</td><td>2026/04/03</td><td class="mono">08:20:11</td><td><span class="pill error">失敗</span></td><td class="muted"><span class="errmsg" title="Error Code 57722：兌換張數超過本次可兌換上限，請重新確認航班艙等與張數">Error Code 57722：兌換張數超過本次可兌換上限，請重新確認航班艙等與張數</span></td><td><span class="lnk view-detail" data-id="10">查看明細</span></td></tr>
+<tr><td class="mono">ALMS</td><td class="mono">JX0011009</td><td class="muted">—</td><td class="mono">172.1.1.5</td><td>2026/04/03</td><td class="mono">16:47:29</td><td><span class="pill success">成功</span></td><td class="muted">—</td><td><span class="lnk view-detail" data-id="11">查看明細</span></td></tr>
+<tr><td class="mono">ALMS</td><td class="mono">JX0011009</td><td class="muted">—</td><td class="mono">172.1.1.5</td><td>2026/04/03</td><td class="mono">16:50:03</td><td><span class="pill error">失敗</span></td><td class="muted"><span class="errmsg" title="Error Code 409：此會員帳號已存在有效兌換申請中，請稍候再試">Error Code 409：此會員帳號已存在有效兌換申請中，請稍候再試</span></td><td><span class="lnk view-detail" data-id="12">查看明細</span></td></tr>
+</tbody></table></div>
+<div class="pager"><div class="pager-size"><span class="muted">每頁顯示</span><select class="inp sm" style="width:88px"><option>50</option><option>100</option><option>200</option><option>500</option></select><span class="muted">筆，共 12 筆</span></div><div class="pager-nav"><span class="pg-btn is-disabled">‹</span><span class="pg-btn is-current">1</span><span class="pg-btn is-disabled">›</span></div></div>
+<div class="modal-mask" id="detailModal"><div class="modal detail-modal">
+  <div class="modal-head"><span>歷程明細</span><span class="modal-close" id="detailClose">✕</span></div>
+  <div class="modal-body">
+    <div class="kv">
+      <div class="kv-item"><span class="k">介接系統</span><span class="v mono" id="d-sys"></span></div>
+      <div class="kv-item"><span class="k">結果</span><span class="v" id="d-status"></span></div>
+      <div class="kv-item"><span class="k">ALCP ID</span><span class="v mono" id="d-alcp"></span></div>
+      <div class="kv-item"><span class="k">PNR</span><span class="v mono" id="d-pnr"></span></div>
+      <div class="kv-item"><span class="k">IP Address</span><span class="v mono" id="d-ip"></span></div>
+      <div class="kv-item"><span class="k">日期時間</span><span class="v mono" id="d-datetime"></span></div>
+    </div>
+    <div class="detail-sec" id="d-err-wrap"><div class="detail-lbl">Error Message</div><div class="detail-err" id="d-err"></div></div>
+    <div class="detail-sec"><div class="detail-lbl">Request</div><pre class="codeblock" id="d-req"></pre></div>
+    <div class="detail-sec"><div class="detail-lbl">Response</div><pre class="codeblock" id="d-res"></pre></div>
+  </div>
+  <div class="modal-foot"><button class="btn-ghost btn-sm" id="detailClose2">關閉</button></div>
+</div></div>
+<script src="js/be-02-歷程查詢.js"></script>
+</div></div></div><footer class="site-footer"><img class="brand-mark" src="assets/imgLogoStarlux.svg" alt="STARLUX"><div class="legal">&#169; Copyright 2026. STARLUX Airlines Co. Ltd. All rights reserved</div></footer></body></html>

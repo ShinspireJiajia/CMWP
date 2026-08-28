@@ -1,0 +1,28 @@
+﻿<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><title>企業點數結算</title><link rel="stylesheet" href="../css/tokens.css"><link rel="stylesheet" href="css/be-common.css"><link rel="stylesheet" href="css/be-04-企業點數結算.css"></head><body><div class="app"><div class="side"><a class="logo" href="BE_02_歷程查詢.html"><img src="assets/imgLogoStarlux.svg" style="height:26px;display:block" alt="STARLUX"><div class="t" style="margin-left:8px">企業會員網站後台</div></a><div class="nav"><a class="it is-current" href="BE_03_累計門檻維護.html">▸ 累計功能管理</a><div class="sub"><a class="" href="BE_03_累計門檻維護.html">累計門檻維護</a><a class="is-current" href="BE_04_企業點數結算.html">企業點數結算</a></div><a class="it " href="BE_05_企業資料維護.html">▸ 基本資料管理</a><a class="it " href="BE_06_公告管理.html">▸ 網頁內容管理</a><a class="it " href="BE_07_用戶清單.html">▸ 權限管理</a><a class="it " href="BE_02_歷程查詢.html">▸ 歷程查詢</a></div></div><div class="body"><div class="top"><div class="crumb">累計功能管理 ＞ <b>企業點數結算</b></div><div class="usr"><span>王志明（Admin）</span><div class="av">王</div><a href="BE_01_後台登入.html" class="logout">登出</a></div></div><div class="main"><div class="h1">企業點數結算</div>
+<!-- 列表視圖：結算期別（日期／國家） -->
+<div id="listView">
+<div class="bar"><span class="muted">各結算期別（依日期／國家），點「檢視」進入企業結算明細。</span></div>
+<div class="card"><table><thead><tr><th>日期</th><th>國家</th><th>檢視</th><th>ALCP檔案匯出</th><th>By</th></tr></thead><tbody>
+<tr><td class="mono">2026/01</td><td>US</td><td><span class="lnk go-detail" data-date="2026/01" data-country="US">檢視</span></td><td><span class="pill success">已匯出</span></td><td class="muted">2320262<br>2026/01/05</td></tr>
+<tr><td class="mono">2026/01</td><td>TW</td><td><span class="lnk go-detail" data-date="2026/01" data-country="TW">檢視</span></td><td class="muted">尚未</td><td class="muted">—</td></tr>
+<tr><td class="mono">2026/02</td><td>US</td><td><span class="lnk go-detail" data-date="2026/02" data-country="US">檢視</span></td><td class="muted">尚未</td><td class="muted">—</td></tr>
+<tr><td class="mono">2026/03</td><td>US</td><td><span class="lnk go-detail" data-date="2026/03" data-country="US">檢視</span></td><td class="muted">尚未</td><td class="muted">—</td></tr>
+</tbody></table></div>
+<div class="pager"><div class="pager-size"><span class="muted">每頁顯示</span><select class="inp sm" style="width:88px"><option>50</option><option>100</option><option>200</option><option>500</option></select><span class="muted">筆，共 4 筆</span></div><div class="pager-nav"><span class="pg-btn is-disabled">‹</span><span class="pg-btn is-current">1</span><span class="pg-btn is-disabled">›</span></div></div>
+</div>
+<!-- 明細視圖：企業結算成績及回饋 -->
+<div id="detailView" style="display:none">
+<div class="bar"><button class="btn-ghost btn-sm" id="backList">← 返回列表</button><span style="font-weight:700;font-size:15px;color:var(--color-ink-base)"><span id="d-date">2026/01</span>　<span id="d-country">TW</span>　結算成績及回饋</span></div>
+<div class="bar"><div style="display:flex;align-items:center;gap:8px"><span class="muted">搜尋：</span><input class="inp" style="width:260px" placeholder="ALCP ID / 企業名"></div></div>
+<div class="card"><table id="setlTable"><thead><tr><th>ALCP ID</th><th>企業名</th><th>開票成績</th><th>點數</th><th>調整</th><th>操作</th><th>最近一次更新</th></tr></thead><tbody>
+<tr><td class="mono">JX0000789</td><td>宏碁</td><td class="mono">$ 935,681</td><td style="font-weight:700;color:var(--color-brand-dark)">11,500</td><td class="adj-cell"></td><td class="act-cell"><span class="lnk row-edit">編輯</span></td><td class="muted lub">王志明<br>2026/4/30 17:20</td></tr>
+<tr><td class="mono">JX0000571</td><td>鴻海</td><td class="mono">$ 627,533</td><td style="font-weight:700;color:var(--color-brand-dark)">11,500</td><td class="adj-cell"></td><td class="act-cell"><span class="lnk row-edit">編輯</span></td><td class="muted lub">—</td></tr>
+<tr><td class="mono">JX0001256</td><td>廣達</td><td class="mono">$ 1,000,389</td><td style="font-weight:700;color:var(--color-brand-dark)">35,000</td><td class="adj-cell"></td><td class="act-cell"><span class="lnk row-edit">編輯</span></td><td class="muted lub">—</td></tr>
+<tr><td class="mono">JX0002046</td><td>仁寶</td><td class="mono">$ 1,557,659</td><td style="font-weight:700;color:var(--color-brand-dark)">52,500</td><td class="adj-cell"></td><td class="act-cell"><span class="lnk row-edit">編輯</span></td><td class="muted lub">—</td></tr>
+</tbody></table></div>
+<div class="pager"><div class="pager-size"><span class="muted">每頁顯示</span><select class="inp sm" style="width:88px"><option>50</option><option>100</option><option>200</option><option>500</option></select><span class="muted">筆，共 4 筆</span></div><div class="pager-nav"><span class="pg-btn is-disabled">‹</span><span class="pg-btn is-current">1</span><span class="pg-btn is-disabled">›</span></div></div>
+<div class="bar" style="justify-content:flex-end;margin-top:16px"><button class="btn-ghost btn-sm">成績檔案匯出</button><button class="btn-primary btn-sm">ALCP檔案匯出</button></div>
+<p class="muted" style="font-size:12px;margin-top:8px">＊每月接收 EDWS 開票成績，依累計門檻換算點數；調整後將記錄編輯者與時間，匯出檔呈現調整後資料。</p>
+</div>
+<script src="js/be-04-企業點數結算.js"></script>
+</div></div></div><footer class="site-footer"><img class="brand-mark" src="assets/imgLogoStarlux.svg" alt="STARLUX"><div class="legal">&#169; Copyright 2026. STARLUX Airlines Co. Ltd. All rights reserved</div></footer></body></html>

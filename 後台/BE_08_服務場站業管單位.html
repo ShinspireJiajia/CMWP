@@ -1,0 +1,26 @@
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><title>服務場站業管單位</title><link rel="stylesheet" href="../css/tokens.css"><link rel="stylesheet" href="css/be-common.css"><link rel="stylesheet" href="css/be-08-服務場站業管單位.css"></head><body><div class="app"><div class="side"><a class="logo" href="BE_02_歷程查詢.html"><img src="assets/imgLogoStarlux.svg" style="height:26px;display:block" alt="STARLUX"><div class="t" style="margin-left:8px">企業會員網站後台</div></a><div class="nav"><a class="it " href="BE_03_累計門檻維護.html">▸ 累計功能管理</a><a class="it is-current" href="BE_05_企業資料維護.html">▸ 基本資料管理</a><div class="sub"><a class="" href="BE_05_企業資料維護.html">企業資料維護</a><a class="is-current" href="BE_08_服務場站業管單位.html">服務場站業管單位</a></div><a class="it " href="BE_06_公告管理.html">▸ 網頁內容管理</a><a class="it " href="BE_07_用戶清單.html">▸ 權限管理</a><a class="it " href="BE_02_歷程查詢.html">▸ 歷程查詢</a></div></div><div class="body"><div class="top"><div class="crumb">基本資料管理 ＞ <b>服務場站業管單位</b></div><div class="usr"><span>王志明（Admin）</span><div class="av">王</div><a href="BE_01_後台登入.html" class="logout">登出</a></div></div><div class="main"><div class="h1">服務場站業管單位</div>
+<!-- 列表視圖 -->
+<div id="listView">
+<div class="bar" style="justify-content:flex-end"><button class="btn-ghost btn-sm go-edit" id="addNew">＋ 新增</button></div>
+<div class="card"><table><thead><tr><th>服務場站（中文）</th><th>服務場站（英文）</th><th>Email</th><th style="width:160px">Last Updated</th><th style="width:70px">操作</th></tr></thead><tbody>
+<tr><td style="font-weight:600">台灣</td><td>Taiwan</td><td>CAS@starlux-airlines.com</td><td class="muted">2320262<br>2026/5/31 10:23</td><td><span class="lnk go-edit" data-zh="台灣" data-en="Taiwan" data-email="CAS" data-lu="2320262" data-lu2="2026/5/31 10:23">編輯</span></td></tr>
+<tr><td style="font-weight:600">美國</td><td>U.S.A</td><td>US_CFFP@starlux-airlines.com</td><td class="muted">2100022<br>2026/5/31 10:23</td><td><span class="lnk go-edit" data-zh="美國" data-en="U.S.A" data-email="US_CFFP" data-lu="2100022" data-lu2="2026/5/31 10:23">編輯</span></td></tr>
+<tr><td style="font-weight:600">全球</td><td>GLOBAL</td><td>CBS@starlux-airlines.com</td><td class="muted">1900001<br>2026/5/31 10:23</td><td><span class="lnk go-edit" data-zh="全球" data-en="GLOBAL" data-email="CBS" data-lu="1900001" data-lu2="2026/5/31 10:23">編輯</span></td></tr>
+</tbody></table></div>
+<div class="pager"><div class="pager-size"><span class="muted">每頁顯示</span><select class="inp sm" style="width:88px"><option>50</option><option>100</option><option>200</option><option>500</option></select><span class="muted">筆，共 3 筆</span></div><div class="pager-nav"><span class="pg-btn is-disabled">‹</span><span class="pg-btn is-current">1</span><span class="pg-btn is-disabled">›</span></div></div>
+</div>
+<!-- 編輯視圖 -->
+<div id="editView" style="display:none">
+<div class="bar"><button class="btn-ghost btn-sm" id="backList">← 返回列表</button><div style="margin-left:auto;display:flex;align-items:center;gap:6px"><span class="muted" id="editModeLabel">最後修改：</span><b id="editLu" style="color:var(--color-text)">—</b></div></div>
+<div class="card pad">
+  <div class="filters" style="margin:0 0 10px">
+    <div class="f"><label>服務場站（中文）</label><input class="inp" id="e-zh" style="width:220px"></div>
+    <div class="f"><label>服務場站（英文）</label><input class="inp" id="e-en" style="width:220px"></div>
+    <div class="f"><label>Email 帳號</label><input class="inp" id="e-email" style="width:220px"></div>
+  </div>
+  <div class="muted" style="margin:0 0 20px;font-size:13px">完整信箱：<span id="e-email-preview">—</span></div>
+  <button class="btn-primary" id="saveBtn" style="width:120px">儲存</button><span class="lnk" id="delBtn" style="color:var(--color-state-error);margin-left:20px">刪除</span>
+</div>
+</div>
+<script src="js/be-08-服務場站業管單位.js"></script>
+</div></div></div><footer class="site-footer"><img class="brand-mark" src="assets/imgLogoStarlux.svg" alt="STARLUX"><div class="legal">&#169; Copyright 2026. STARLUX Airlines Co. Ltd. All rights reserved</div></footer></body></html>

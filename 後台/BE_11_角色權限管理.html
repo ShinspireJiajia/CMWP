@@ -1,0 +1,51 @@
+﻿<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><title>角色權限管理</title><link rel="stylesheet" href="../css/tokens.css"><link rel="stylesheet" href="css/be-common.css"><link rel="stylesheet" href="css/be-11-角色權限管理.css"></head><body><div class="app"><div class="side"><a class="logo" href="BE_02_歷程查詢.html"><img src="assets/imgLogoStarlux.svg" style="height:26px;display:block" alt="STARLUX"><div class="t" style="margin-left:8px">企業會員網站後台</div></a><div class="nav"><a class="it " href="BE_03_累計門檻維護.html">▸ 累計功能管理</a><a class="it " href="BE_05_企業資料維護.html">▸ 基本資料管理</a><a class="it " href="BE_06_公告管理.html">▸ 網頁內容管理</a><a class="it is-current" href="BE_07_用戶清單.html">▸ 權限管理</a><div class="sub"><a class="" href="BE_07_用戶清單.html">用戶清單</a><a class="is-current" href="BE_11_角色權限管理.html">角色權限管理</a><a class="" href="BE_12_權限歷程.html">權限歷程</a></div><a class="it " href="BE_02_歷程查詢.html">▸ 歷程查詢</a></div></div><div class="body"><div class="top"><div class="crumb">權限管理 ＞ <b>角色權限管理</b></div><div class="usr"><span>王志明（Admin）</span><div class="av">王</div><a href="BE_01_後台登入.html" class="logout">登出</a></div></div><div class="main"><div class="h1">角色權限管理</div>
+<!-- 列表視圖 -->
+<div id="listView">
+<div class="card pad" style="margin-bottom:16px">
+  <div class="filters-grid">
+    <div class="f"><label>搜尋</label><input class="inp" placeholder="請輸入角色權限名稱"></div>
+    <div class="f"><label>狀態</label><select class="inp"><option>全部</option><option>啟用</option><option>停用</option></select></div>
+  </div>
+  <div class="filters-div"></div>
+  <div class="filters-foot" style="justify-content:flex-end">
+    <div class="filters-btns"><button class="btn-primary">查詢</button><button class="btn-primary go-edit">＋ 新增角色權限</button></div>
+  </div>
+</div>
+<div class="card"><table><thead><tr><th style="width:60px">項次</th><th>角色權限名稱</th><th>權限帳號數</th><th>狀態</th><th>異動時間</th><th>最後修改者</th><th style="width:200px">操作</th></tr></thead><tbody>
+<tr><td>1</td><td style="font-weight:600">平台管理員</td><td>13</td><td>啟用</td><td class="mono">2026-05-19 16:39:31</td><td>janet</td><td><span class="lnk go-edit">檢視</span> ｜ <span class="lnk go-edit" style="color:#4C8C5A">編輯</span> ｜ <span class="lnk" style="color:#C1585A">刪除</span></td></tr>
+<tr><td>2</td><td style="font-weight:600">一般使用者</td><td>5</td><td>啟用</td><td class="mono">2026-02-26 09:43:04</td><td>Admin01</td><td><span class="lnk go-edit">檢視</span> ｜ <span class="lnk go-edit" style="color:#4C8C5A">編輯</span> ｜ <span class="lnk" style="color:#C1585A">刪除</span></td></tr>
+</tbody></table></div>
+<div class="pager"><div class="pager-size"><span class="muted">每頁顯示</span><select class="inp sm" style="width:88px"><option>50</option><option>100</option><option>200</option><option>500</option></select><span class="muted">筆，共 2 筆</span></div><div class="pager-nav"><span class="pg-btn is-disabled">‹</span><span class="pg-btn is-current">1</span><span class="pg-btn is-disabled">›</span></div></div>
+</div>
+<!-- 新增／編輯視圖 -->
+<div id="editView" style="display:none">
+<div class="bar"><button class="btn-ghost btn-sm" id="backList">← 返回列表</button></div>
+<div class="card pad">
+  <div class="fld"><span class="lb req">權限名稱</span><input class="inp" style="width:320px" placeholder="請輸入角色權限名稱"></div>
+  <div class="fld"><span class="lb req">狀態</span><select class="inp" style="width:140px"><option>啟用</option><option>停用</option></select></div>
+
+  <div class="perm-group">歷程查詢</div>
+  <div class="perm-row"><span class="pname">操作紀錄查詢</span><div class="pchecks"><label><input type="checkbox" class="selall">全選</label><label><input type="checkbox" class="perm">檢視</label></div></div>
+
+  <div class="perm-group">累計功能管理</div>
+  <div class="perm-row"><span class="pname">累計門檻維護</span><div class="pchecks"><label><input type="checkbox" class="selall">全選</label><label><input type="checkbox" class="perm">檢視</label><label><input type="checkbox" class="perm">新增</label><label><input type="checkbox" class="perm">修改</label><label><input type="checkbox" class="perm">刪除</label></div></div>
+  <div class="perm-row"><span class="pname">企業點數結算</span><div class="pchecks"><label><input type="checkbox" class="selall">全選</label><label><input type="checkbox" class="perm">檢視</label><label><input type="checkbox" class="perm">新增</label><label><input type="checkbox" class="perm">修改</label><label><input type="checkbox" class="perm">刪除</label></div></div>
+
+  <div class="perm-group">基本資料管理</div>
+  <div class="perm-row"><span class="pname">企業資料維護</span><div class="pchecks"><label><input type="checkbox" class="selall">全選</label><label><input type="checkbox" class="perm">檢視</label><label><input type="checkbox" class="perm">新增</label><label><input type="checkbox" class="perm">修改</label><label><input type="checkbox" class="perm">刪除</label></div></div>
+  <div class="perm-row"><span class="pname">服務場站業管單位</span><div class="pchecks"><label><input type="checkbox" class="selall">全選</label><label><input type="checkbox" class="perm">檢視</label><label><input type="checkbox" class="perm">新增</label><label><input type="checkbox" class="perm">修改</label><label><input type="checkbox" class="perm">刪除</label></div></div>
+
+  <div class="perm-group">網頁內容管理</div>
+  <div class="perm-row"><span class="pname">公告管理</span><div class="pchecks"><label><input type="checkbox" class="selall">全選</label><label><input type="checkbox" class="perm">檢視</label><label><input type="checkbox" class="perm">新增</label><label><input type="checkbox" class="perm">修改</label><label><input type="checkbox" class="perm">刪除</label></div></div>
+  <div class="perm-row"><span class="pname">全站文案管理</span><div class="pchecks"><label><input type="checkbox" class="selall">全選</label><label><input type="checkbox" class="perm">檢視</label><label><input type="checkbox" class="perm">新增</label><label><input type="checkbox" class="perm">修改</label><label><input type="checkbox" class="perm">刪除</label></div></div>
+  <div class="perm-row"><span class="pname">郵件模板管理</span><div class="pchecks"><label><input type="checkbox" class="selall">全選</label><label><input type="checkbox" class="perm">檢視</label><label><input type="checkbox" class="perm">新增</label><label><input type="checkbox" class="perm">修改</label><label><input type="checkbox" class="perm">刪除</label></div></div>
+
+  <div class="perm-group">權限管理</div>
+  <div class="perm-row"><span class="pname">用戶清單</span><div class="pchecks"><label><input type="checkbox" class="selall">全選</label><label><input type="checkbox" class="perm">檢視</label><label><input type="checkbox" class="perm">新增</label><label><input type="checkbox" class="perm">修改</label><label><input type="checkbox" class="perm">刪除</label></div></div>
+  <div class="perm-row"><span class="pname">角色權限管理</span><div class="pchecks"><label><input type="checkbox" class="selall">全選</label><label><input type="checkbox" class="perm">檢視</label><label><input type="checkbox" class="perm">新增</label><label><input type="checkbox" class="perm">修改</label><label><input type="checkbox" class="perm">刪除</label></div></div>
+
+  <div style="margin-top:24px"><button class="btn-primary" style="width:120px">儲存</button></div>
+</div>
+</div>
+<script src="js/be-11-角色權限管理.js"></script>
+</div></div></div><footer class="site-footer"><img class="brand-mark" src="assets/imgLogoStarlux.svg" alt="STARLUX"><div class="legal">&#169; Copyright 2026. STARLUX Airlines Co. Ltd. All rights reserved</div></footer></body></html>

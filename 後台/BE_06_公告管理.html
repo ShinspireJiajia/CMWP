@@ -1,0 +1,45 @@
+﻿<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><title>公告管理</title><link rel="stylesheet" href="../css/tokens.css"><link rel="stylesheet" href="css/be-common.css"><link rel="stylesheet" href="css/be-06-公告管理.css"></head><body><div class="app"><div class="side"><a class="logo" href="BE_02_歷程查詢.html"><img src="assets/imgLogoStarlux.svg" style="height:26px;display:block" alt="STARLUX"><div class="t" style="margin-left:8px">企業會員網站後台</div></a><div class="nav"><a class="it " href="BE_03_累計門檻維護.html">▸ 累計功能管理</a><a class="it " href="BE_05_企業資料維護.html">▸ 基本資料管理</a><a class="it is-current" href="BE_06_公告管理.html">▸ 網頁內容管理</a><div class="sub"><a class="is-current" href="BE_06_公告管理.html">公告管理</a><a class="" href="BE_09_全站文案管理.html">全站文案管理</a><a class="" href="BE_10_郵件模板管理.html">郵件模板管理</a></div><a class="it " href="BE_07_用戶清單.html">▸ 權限管理</a><a class="it " href="BE_02_歷程查詢.html">▸ 歷程查詢</a></div></div><div class="body"><div class="top"><div class="crumb">網頁內容管理 ＞ <b>公告管理</b></div><div class="usr"><span>王志明（Admin）</span><div class="av">王</div><a href="BE_01_後台登入.html" class="logout">登出</a></div></div><div class="main"><div class="h1">公告管理</div>
+<!-- 列表視圖 -->
+<div id="listView">
+<div class="card pad" style="margin-bottom:16px">
+  <div class="filters-grid">
+    <div class="f"><label>標題</label><input class="inp" placeholder="請輸入標題"></div>
+    <div class="f"><label>上架日期</label><div class="rangewrap"><input class="inp" type="date"><span class="sep">～</span><input class="inp" type="date"></div></div>
+    <div class="f"><label>下架日期</label><div class="rangewrap"><input class="inp" type="date"><span class="sep">～</span><input class="inp" type="date"></div></div>
+    <div class="f"><label>狀態</label><select class="inp"><option>全部</option><option>上架</option><option>下架</option></select></div>
+  </div>
+  <div class="filters-div"></div>
+  <div class="filters-foot" style="justify-content:flex-end">
+    <div class="filters-btns"><button class="btn-ghost" id="btnReset">重置</button><button class="btn-primary">查詢</button><button class="btn-ghost go-edit" id="addNew">＋ 新增公告</button></div>
+  </div>
+</div>
+<div class="card"><table><thead><tr><th>標題</th><th>上架日期</th><th>下架日期</th><th>狀態</th><th>最後修改者</th><th>最後修改時間</th><th>操作</th></tr></thead><tbody>
+<tr><td style="font-weight:600">停機維護</td><td class="mono">2026/01/05</td><td class="mono">2026/12/31</td><td><span class="pill brand">上架</span></td><td>王志明</td><td class="muted">2026/01/05 10:35:51</td><td><span class="lnk go-edit">編輯</span></td></tr>
+<tr><td style="font-weight:600">PRG Promote</td><td class="mono">2026/04/01</td><td class="mono">2026/06/30</td><td><span class="pill brand">上架</span></td><td>王志明</td><td class="muted">2026/04/01 09:25:00</td><td><span class="lnk go-edit">編輯</span></td></tr>
+<tr><td style="font-weight:600">PUS Promote</td><td class="mono">2026/02/18</td><td class="mono">2026/03/31</td><td><span class="pill mut">下架</span></td><td>王志明</td><td class="muted">2026/02/18 17:43:52</td><td><span class="lnk go-edit">編輯</span></td></tr>
+</tbody></table></div>
+<div class="pager"><div class="pager-size"><span class="muted">每頁顯示</span><select class="inp sm" style="width:88px"><option>50</option><option>100</option><option>200</option><option>500</option></select><span class="muted">筆，共 3 筆</span></div><div class="pager-nav"><span class="pg-btn is-disabled">‹</span><span class="pg-btn is-current">1</span><span class="pg-btn is-disabled">›</span></div></div>
+</div>
+<!-- 編輯視圖 -->
+<div id="editView" style="display:none">
+<div class="bar"><button class="btn-ghost btn-sm" id="backList">← 返回列表</button></div>
+<div class="card pad">
+  <div class="seg" style="margin-bottom:20px"><span class="is-selected lang-tab" data-lang="zh">中文</span><span class="lang-tab" data-lang="en">English</span></div>
+  <div class="lang-panel" id="p-zh">
+    <div class="f" style="margin-bottom:16px"><label>標題</label><input class="inp" style="width:100%" value="系統例行維護通知"></div>
+    <div class="f" style="margin-bottom:16px"><label>內容</label><textarea class="inp" style="width:100%;height:120px;padding:10px">本網站預計於台灣時間 6/1 22:00–23:00 進行例行性維修，造成不便敬請見諒。</textarea></div>
+  </div>
+  <div class="lang-panel" id="p-en" style="display:none">
+    <div class="f" style="margin-bottom:16px"><label>Title</label><input class="inp" style="width:100%" value="Scheduled System Maintenance"></div>
+    <div class="f" style="margin-bottom:16px"><label>Content</label><textarea class="inp" style="width:100%;height:120px;padding:10px">We will perform routine maintenance during 6/1 22:00–23:00 (GMT+8). We apologize for any inconvenience.</textarea></div>
+  </div>
+  <div class="filters" style="margin:8px 0 20px">
+    <div class="f"><label>上架時間</label><input class="inp" style="width:190px" value="2026/05/21 00:00"></div>
+    <div class="f"><label>下架時間</label><input class="inp" style="width:190px" value="2026/05/31 23:59"></div>
+    <div class="f"><label>狀態</label><select class="inp" style="width:140px"><option>上架</option><option>下架</option></select></div>
+  </div>
+  <button class="btn-primary" style="width:120px">儲存</button>
+</div>
+</div>
+<script src="js/be-06-公告管理.js"></script>
+</div></div></div><footer class="site-footer"><img class="brand-mark" src="assets/imgLogoStarlux.svg" alt="STARLUX"><div class="legal">&#169; Copyright 2026. STARLUX Airlines Co. Ltd. All rights reserved</div></footer></body></html>

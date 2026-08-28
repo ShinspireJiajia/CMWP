@@ -1,0 +1,41 @@
+﻿<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><title>累計門檻維護</title><link rel="stylesheet" href="../css/tokens.css"><link rel="stylesheet" href="css/be-common.css"><link rel="stylesheet" href="css/be-03-累計門檻維護.css"></head><body><div class="app"><div class="side"><a class="logo" href="BE_02_歷程查詢.html"><img src="assets/imgLogoStarlux.svg" style="height:26px;display:block" alt="STARLUX"><div class="t" style="margin-left:8px">企業會員網站後台</div></a><div class="nav"><a class="it is-current" href="BE_03_累計門檻維護.html">▸ 累計功能管理</a><div class="sub"><a class="is-current" href="BE_03_累計門檻維護.html">累計門檻維護</a><a class="" href="BE_04_企業點數結算.html">企業點數結算</a></div><a class="it " href="BE_05_企業資料維護.html">▸ 基本資料管理</a><a class="it " href="BE_06_公告管理.html">▸ 網頁內容管理</a><a class="it " href="BE_07_用戶清單.html">▸ 權限管理</a><a class="it " href="BE_02_歷程查詢.html">▸ 歷程查詢</a></div></div><div class="body"><div class="top"><div class="crumb">累計功能管理 ＞ <b>累計門檻維護</b></div><div class="usr"><span>王志明（Admin）</span><div class="av">王</div><a href="BE_01_後台登入.html" class="logout">登出</a></div></div><div class="main"><div class="h1">累計門檻維護</div>
+<!-- 列表視圖 -->
+<div id="listView">
+<div class="bar"><span class="muted">各地區累計門檻版本列表，點選「檢視 View」僅可查看，點選「編輯 Edit」進入維護。</span></div>
+<div class="card"><table><thead><tr><th>版本 Version</th><th>生效日 Eff Date</th><th>失效日 Exp Date</th><th>檢視 View</th><th>編輯 Edit</th></tr></thead><tbody>
+<tr><td style="font-weight:600">TW2601</td><td class="mono">2026/07/01</td><td class="mono">2028/12/31</td><td><span class="lnk go-view" data-ver="TW2601" data-country="TW 台灣" data-cur="TWD" data-eff="2026/07/01" data-exp="2028/12/31">檢視 View</span></td><td><span class="lnk go-edit" data-ver="TW2601" data-country="TW 台灣" data-cur="TWD" data-eff="2026/07/01" data-exp="2028/12/31">編輯 Edit</span></td></tr>
+<tr><td style="font-weight:600">US2601</td><td class="mono">2026/07/01</td><td class="mono">2027/06/30</td><td><span class="lnk go-view" data-ver="US2601" data-country="US 美國" data-cur="USD" data-eff="2026/07/01" data-exp="2027/06/30">檢視 View</span></td><td><span class="lnk go-edit" data-ver="US2601" data-country="US 美國" data-cur="USD" data-eff="2026/07/01" data-exp="2027/06/30">編輯 Edit</span></td></tr>
+<tr><td style="font-weight:600">G2601</td><td class="mono">2026/07/01</td><td class="mono">2030/12/31</td><td><span class="lnk go-view" data-ver="G2601" data-country="G 全球" data-cur="USD" data-eff="2026/07/01" data-exp="2030/12/31">檢視 View</span></td><td><span class="lnk go-edit" data-ver="G2601" data-country="G 全球" data-cur="USD" data-eff="2026/07/01" data-exp="2030/12/31">編輯 Edit</span></td></tr>
+</tbody></table></div>
+<div class="pager"><div class="pager-size"><span class="muted">每頁顯示</span><select class="inp sm" style="width:88px"><option>50</option><option>100</option><option>200</option><option>500</option></select><span class="muted">筆，共 3 筆</span></div><div class="pager-nav"><span class="pg-btn is-disabled">‹</span><span class="pg-btn is-current">1</span><span class="pg-btn is-disabled">›</span></div></div>
+</div>
+<!-- 編輯視圖 -->
+<div id="editView" style="display:none">
+<div class="bar"><button class="btn-ghost btn-sm" id="backList">← 返回列表 Back</button><span><span class="muted" id="editModeLabel">編輯版本 Edit Version：</span> <b id="editVer" style="color:var(--color-text)">TW2601</b></span></div>
+<div class="card pad" style="margin-bottom:18px;display:flex;align-items:flex-end;gap:20px">
+  <div class="filters" style="flex:1;margin:0;align-items:flex-end">
+    <div class="f"><label>版本 Version</label><input class="inp sm" id="e-ver" value="TW2601"></div>
+    <div class="f"><label>生效日 Eff Date</label><input class="inp sm" id="e-eff" value="2026/07/01"></div>
+    <div class="f"><label>失效日 Exp Date</label><input class="inp sm" id="e-exp" value="2028/12/31"></div>
+    <div class="f"><label>國家 Country</label><input class="inp sm" id="e-country" value="TW 台灣"></div>
+    <div class="f"><label>幣別 Currency</label><input class="inp sm" id="e-cur" value="TWD"></div>
+    <div class="f"><label>頻率 Frequency</label><input class="inp sm" id="e-freq" value="JAN / JUL"></div>
+    <div class="f"><label>累計類型 Accumulated Type</label><select class="inp sm" id="e-type"><option>FIXED 固定點數</option><option>Percentage 比率</option></select></div>
+  </div>
+  <button class="btn-primary" id="saveBtn">💾 儲存 Save</button>
+</div>
+<div class="bar"><span class="muted">累計金額 ＆ 回饋點數對照（同一有效區間內，同 Country 僅能適用一項規則）</span></div>
+<div class="card"><table id="thrTable"><thead><tr><th>累計金額 Accumulated Amount</th><th>回饋點數 Reward Points</th><th id="thrActCol" class="thr-act" style="width:70px;text-align:center">操作 Action</th></tr></thead><tbody>
+<tr><td><input class="inp" style="width:100%" value="300,000"></td><td><input class="inp" style="width:100%" value="6,000"></td><td class="thr-act" style="text-align:center"><span class="lnk del-row" style="color:var(--color-state-error)">刪除</span></td></tr>
+<tr><td><input class="inp" style="width:100%" value="500,000"></td><td><input class="inp" style="width:100%" value="11,500"></td><td class="thr-act" style="text-align:center"><span class="lnk del-row" style="color:var(--color-state-error)">刪除</span></td></tr>
+<tr><td><input class="inp" style="width:100%" value="1,000,000"></td><td><input class="inp" style="width:100%" value="35,000"></td><td class="thr-act" style="text-align:center"><span class="lnk del-row" style="color:var(--color-state-error)">刪除</span></td></tr>
+<tr><td><input class="inp" style="width:100%" value="1,500,000"></td><td><input class="inp" style="width:100%" value="52,500"></td><td class="thr-act" style="text-align:center"><span class="lnk del-row" style="color:var(--color-state-error)">刪除</span></td></tr>
+<tr><td><input class="inp" style="width:100%" value="2,000,000"></td><td><input class="inp" style="width:100%" value=""></td><td class="thr-act" style="text-align:center"><span class="lnk del-row" style="color:var(--color-state-error)">刪除</span></td></tr>
+<tr><td><input class="inp" style="width:100%" value="2,500,000"></td><td><input class="inp" style="width:100%" value=""></td><td class="thr-act" style="text-align:center"><span class="lnk del-row" style="color:var(--color-state-error)">刪除</span></td></tr>
+<tr><td><input class="inp" style="width:100%" value="3,000,000"></td><td><input class="inp" style="width:100%" value=""></td><td class="thr-act" style="text-align:center"><span class="lnk del-row" style="color:var(--color-state-error)">刪除</span></td></tr>
+<tr><td><input class="inp" style="width:100%" value="3,500,000"></td><td><input class="inp" style="width:100%" value="161,000"></td><td class="thr-act" style="text-align:center"><span class="lnk del-row" style="color:var(--color-state-error)">刪除</span></td></tr>
+</tbody></table></div>
+<div style="margin-top:12px" id="addRowBar"><button class="btn-ghost btn-sm" id="addRow">＋ 新增門檻 Add</button></div>
+</div>
+<script src="js/be-03-累計門檻維護.js"></script>
+</div></div></div><footer class="site-footer"><img class="brand-mark" src="assets/imgLogoStarlux.svg" alt="STARLUX"><div class="legal">&#169; Copyright 2026. STARLUX Airlines Co. Ltd. All rights reserved</div></footer></body></html>
